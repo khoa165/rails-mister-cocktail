@@ -27,8 +27,8 @@ end
 puts 'Creating cocktails and doses...'
 15.times do
   cocktail = Cocktail.create(name: Faker::Coffee.blend_name)
-  Random.rand(3..5).times do
-    dose = Dose.create(description: Faker::Lorem.paragraph(sentence_count: Random.rand(3..5), supplemental: true, random_sentences_to_add: 4))
+  Random.rand(8..10).times do
+    dose = Dose.create(description: Faker::Lorem.paragraph(sentence_count: Random.rand(4..6), supplemental: true, random_sentences_to_add: 5))
     dose.ingredient = Ingredient.all.sample
     dose.cocktail = cocktail
     dose.save

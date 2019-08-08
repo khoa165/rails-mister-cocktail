@@ -14,6 +14,11 @@
           <div class="cocktail-card-title d-flex align-items-center">
             <h5><%= cocktail.name %></h5>
           </div>
+          <div class="cocktail-card-body d-flex align-items-start">
+            <% Dose.where(cocktail: cocktail).each do |dose| %>
+              <p><%= dose.name %></p>
+            <% end %>
+          </div>
         </div>
         <div class="cocktail-card-actions">
           <%= link_to cocktail_path(cocktail), class: "link" do %>
