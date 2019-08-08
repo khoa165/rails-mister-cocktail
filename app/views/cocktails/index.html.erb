@@ -14,9 +14,10 @@
           <div class="cocktail-card-title d-flex align-items-center">
             <h5><%= cocktail.name %></h5>
           </div>
-          <div class="cocktail-card-body d-flex align-items-start">
+          <div class="cocktail-card-body d-flex flex-column justify-content-start">
+            <h4>Ingredients</h4>
             <% Dose.where(cocktail: cocktail).each do |dose| %>
-              <p><%= dose.name %></p>
+              <p><%= dose.ingredient.name %></p>
             <% end %>
           </div>
         </div>
