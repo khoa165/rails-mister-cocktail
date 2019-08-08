@@ -1,8 +1,8 @@
 <div class="row my-3">
   <div class="col-12">
-    <%= simple_form_for dose do |f| %>
+    <%= simple_form_for [cocktail, dose] do |f| %>
     <%= f.input :description %>
-    <%= f.association :ingredient %>
+    <%= f.association :ingredient, collection: Ingredient.all %>
     <%= f.submit class: 'btn-elegant' %>
     <% end %>
   </div>
