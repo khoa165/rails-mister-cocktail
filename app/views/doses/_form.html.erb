@@ -1,7 +1,8 @@
 <div class="row my-3">
   <div class="col-12">
-    <%= simple_form_for cocktail do |f| %>
-    <%= f.input :name %>
+    <%= simple_form_for dose do |f| %>
+    <%= f.input :description %>
+    <%= f.association :ingredient %>
     <%= f.submit class: 'btn-elegant' %>
     <% end %>
   </div>
