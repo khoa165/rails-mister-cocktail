@@ -1,0 +1,27 @@
+<div class="container my-3">
+  <div class="d-flex justify-content-between align-items-center mb-5">
+    <h1>Available cocktails</h1>
+    <%= link_to new_cocktail_path, class: "btn-elegant my-3" do %>
+    <i class="fa fa-plus"> Add new cocktail</i>
+    <% end %>
+  </div>
+  <div class="row">
+    <% @cocktails.each do |cocktail| %>
+    <div class="col-4">
+      <div class="cocktail-card">
+        <div class="cocktail-card-image" style="background-image: url('https://images.unsplash.com/photo-1494526585095-c41746248156?w=1200')"></div>
+        <div class="cocktail-card-content">
+          <div class="cocktail-card-title d-flex align-items-center">
+            <h5><%= cocktail.name %></h5>
+          </div>
+        </div>
+        <div class="cocktail-card-actions">
+          <%= link_to cocktail_path(cocktail), class: "link" do %>
+          <i class="fas fa-info-circle"> More info</i>
+          <% end %>
+        </div>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>
