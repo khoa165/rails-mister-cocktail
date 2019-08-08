@@ -10,7 +10,9 @@ require 'json'
 
 
 puts 'Cleaning database...'
+Cocktail.destroy_all
 Ingredient.destroy_all
+Dose.destroy_all
 
 puts 'Creating ingredients...'
 url = "https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list"
@@ -20,6 +22,17 @@ result = JSON.parse(json_file)
 drinks = result["drinks"]
 drinks.each do |drink|
   Ingredient.create(name: drink["strIngredient1"])
+end
+
+puts 'Creating cocktails and doses...'
+15.times do
+  cocktail = Cocktail.create(name: Faker::Coffee.blend_name)
+  Random.rand(3..5).times do
+    dose = Dose.create(description: Faker::Lorem.paragraph(sentence_count: Random.rand(3..5), supplemental: true, random_sentences_to_add: 4))
+    dose.ingredient = Ingredient.all.sample
+    dose.cocktail = cocktail
+    dose.save
+  end
 end
 
 puts 'Finished!'
