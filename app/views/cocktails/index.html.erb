@@ -7,7 +7,7 @@
   </div>
   <div class="row">
     <% @cocktails.each do |cocktail| %>
-    <div class="col-4">
+    <div class="col-12 col-lg-4">
       <div class="cocktail-card">
         <% if cocktail.photo.url.nil? %>
           <div class="cocktail-card-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://picsum.photos/200/300')"></div>
