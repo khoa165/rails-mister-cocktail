@@ -65,3 +65,4 @@ gem 'simple_form'
 gem 'faker', '~> 2.1'
 gem 'dotenv-rails', groups: [:development, :test]
 gem 'cloudinary', '~> 1.9.1'
+gem 'carrierwave', '~> 1.2'
