@@ -26,7 +26,10 @@ end
 
 puts 'Creating cocktails and doses...'
 15.times do
+  url = "http://static.giantbomb.com/uploads/original/9/99864/2419866-nes_console_set.png"
   cocktail = Cocktail.create(name: Faker::Coffee.blend_name)
+  cocktail.remote_photo_url = url
+  cocktail.save
   Random.rand(8..10).times do
     dose = Dose.create(description: Faker::Lorem.paragraph(sentence_count: Random.rand(4..6), supplemental: true, random_sentences_to_add: 5))
     dose.ingredient = Ingredient.all.sample

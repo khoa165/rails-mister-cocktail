@@ -1,7 +1,11 @@
 <div class="container">
   <div class="d-flex justify-content-between align-items-center">
-    <h1><%= @cocktail.name %></h1>
-    <%= link_to new_cocktail_dose_path(@cocktail), class: "btn-elegant my-3" do %>
+    <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path @article.photo, height: 300, width: 400, crop: :fill %>')">
+      <h1><%= @cocktail.name %></h1>
+    </div>
+    <div>
+      <%= link_to new_cocktail_dose_path(@cocktail), class: "btn-elegant my-3" do %>
+    </div>
     <i class="fa fa-plus"> Add new dose</i>
     <% end %>
   </div>
