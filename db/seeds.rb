@@ -25,7 +25,7 @@ drinks.each do |drink|
 end
 
 puts 'Creating cocktails and doses...'
-15.times do
+5.times do
   url = "http://static.giantbomb.com/uploads/original/9/99864/2419866-nes_console_set.png"
   cocktail = Cocktail.create(name: Faker::Coffee.blend_name)
   cocktail.remote_photo_url = url
