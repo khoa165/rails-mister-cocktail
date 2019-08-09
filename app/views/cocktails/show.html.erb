@@ -1,12 +1,8 @@
 <div class="container">
   <div class="d-flex justify-content-between align-items-center">
-    <div class="card">
-      <h1><%= @cocktail.name %></h1>
-    </div>
-    <div>
-      <%= link_to new_cocktail_dose_path(@cocktail), class: "btn-elegant my-3" do %>
-    </div>
-    <i class="fa fa-plus"> Add new dose</i>
+    <h1><%= @cocktail.name %></h1>
+    <%= link_to new_cocktail_dose_path(@cocktail), class: "btn-elegant my-3" do %>
+      <i class="fa fa-plus"> Add new dose</i>
     <% end %>
   </div>
   <div class="container">
