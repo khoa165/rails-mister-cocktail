@@ -2,7 +2,7 @@
   <div class="col-12">
     <%= simple_form_for [cocktail, dose] do |f| %>
     <%= f.input :description %>
-    <%= f.association :ingredient, collection: Ingredient.all %>
+    <%= f.association :ingredient%>
     <%= f.submit class: 'btn-elegant' %>
     <% end %>
   </div>

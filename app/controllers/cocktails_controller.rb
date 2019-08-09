@@ -6,8 +6,6 @@ class CocktailsController < ApplicationController
   end
 
   def show
-    # raise
-    @doses = Dose.where(cocktail: @cocktail)
   end
 
   def new
@@ -15,7 +13,7 @@ class CocktailsController < ApplicationController
   end
 
   def create
-    @cocktail = Cocktail.create(cocktail_strong_params)
+    @cocktail = Cocktail.new(cocktail_strong_params)
     if @cocktail.save #return true or false
       redirect_to cocktail_path(@cocktail)
     else
